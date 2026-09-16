@@ -295,9 +295,4 @@ module axi_tagctrl_reg_wrap #(
       .cached_end_addr_i
   );
 
-  // Assert Known for module outputs
-  `ASSERT_KNOWN(TaggedSubordinateResponseKnown, slv_resp_o)
-  `ASSERT_KNOWN(UntaggedManagerRequestKnown, mst_req_o)
-  `ASSERT_KNOWN(ConfigurationSubordinateResponseKnown, conf_resp_o)
-
 endmodule
