@@ -70,10 +70,10 @@ The changes to CSRs are mostly found in the [`csr_regfile`][csr-regfile].
 
 [riscv-spec]: https://github.com/riscv/riscv-isa-manual
 [cva6-upstream]: https://github.com/openhwfoundation/cva6
-[cva6-cheri-docs]: hw/vendor/cva6_cheri/docs
+[cva6-cheri-docs]: ../../hw/vendor/cva6_cheri/docs
 [rvy-spec]: https://github.com/riscv/riscv-cheri
 [rvy-spec-093]: https://github.com/riscv/riscv-cheri/releases/tag/v0.9.3-prerelease
-[cva6-cheri-pkg]: hw/vendor/cva6_cheri/core/include/cva6_cheri_pkg.sv
-[lsu]: hw/vendor/cva6_cheri/core/load_store_unit.sv
-[iro]: hw/vendor/cva6_cheri/core/issue_read_operands.sv
-[csr-regfile]: hw/vendor/cva6_cheri/core/csr_regfile.sv
+[cva6-cheri-pkg]: ../../hw/vendor/cva6_cheri/core/include/cva6_cheri_pkg.sv
+[lsu]: ../../hw/vendor/cva6_cheri/core/load_store_unit.sv
+[iro]: ../../hw/vendor/cva6_cheri/core/issue_read_operands.sv
+[csr-regfile]: ../../hw/vendor/cva6_cheri/core/csr_regfile.sv
