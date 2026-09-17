@@ -85,7 +85,7 @@ The changes to CSRs are mostly found in the [`csr_regfile`][csr_regfile].
 | RTL           | PHYSICAL_MACROS_DEFINED_80 | TODO   | ...
 | RTL           | FUNC_IMPLEMENTED           | Done   | CVA6-CHERI's mainline functionality is implemented. The baseline processor implements the RISC-V specification, and CHERI features are implemented, including manipulating capabilities, enforcing capability checks, and propagating tags and capability metadata throughout the pipeline. This is demonstrating by booting the pure capability CHERI Linux within Mocha, and pure capability CheriBSD in the `COREV_APU` SoC on FGPA.
 | RTL           | ASSERT_KNOWN_ADDED         | TODO   | ...
-| Code Quality  | LINT_SETUP                 | DONE   | Verilator warning waivers are added to [`top_chip_system.vlt`][waivers].
+| Code Quality  | LINT_SETUP                 | Done   | Verilator warning waivers are added to [`top_chip_system.vlt`][waivers].
 
 [riscv-spec]: https://github.com/riscv/riscv-isa-manual
 [capltd-cva6-cheri]: https://github.com/Capabilities-Limited/cheri-cva6
