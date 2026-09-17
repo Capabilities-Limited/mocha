@@ -1,6 +1,6 @@
 # CVA6-CHERI
 
-CVA6-CHERI in Mocha is imported from the [Capabilities Limited repo][capltd-cva6-cheri].
+CVA6-CHERI in Mocha is imported from the [lowRISC CVA6-CHERI repo][lowrisc-cva6-cheri], which is in turn forked from the [Capabilities Limited repo][capltd-cva6-cheri].
 
 ## CVA6-CHERI design specification
 
@@ -89,6 +89,7 @@ The changes to CSRs are mostly found in the [`csr_regfile`][csr_regfile].
 
 [riscv-spec]: https://github.com/riscv/riscv-isa-manual
 [capltd-cva6-cheri]: https://github.com/Capabilities-Limited/cheri-cva6
+[lowrisc-cva6-cheri]: https://github.com/lowRISC/cva6-cheri
 [cva6-cheri-docs]: https://github.com/Capabilities-Limited/cheri-cva6/tree/zcheri/docs
 [rvy-spec]: https://github.com/riscv/riscv-cheri
 [rvy-spec-093]: https://github.com/riscv/riscv-cheri/releases/tag/v0.9.3-prerelease
