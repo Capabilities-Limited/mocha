@@ -11,17 +11,17 @@ The CVA6-CHERI IP vendored into Mocha targets version [0.9.3][rvy-spec-093] of t
 
 ## ISA Extension Configuration
 The following extensions should be supported, with full capability support where applicable:
-F (floating point)
-D (double-precision floating point)
-C (compressed instructions)
-A (atomics)
-Y (CHERI: both purecap and hybrid)
-Zkn (scalar cryptography)
-B (bit manipulation)
-Zicond (branchless conditional instructions)
-Sdext (debug support)
-Sdtrig (debug trigger support)
-Zicbom (cache management operations)
+* F (floating point)
+* D (double-precision floating point)
+* C (compressed instructions)
+* A (atomics)
+* Y (CHERI: both purecap and hybrid)
+* Zkn (scalar cryptography)
+* B (bit manipulation)
+* Zicond (branchless conditional instructions)
+* Sdext (debug support)
+* Sdtrig (debug trigger support)
+* Zicbom (cache management operations)
 
 ## Microarchitecture
 A CHERI processor requires new features; this section lists how these features are achieved at a high level.
