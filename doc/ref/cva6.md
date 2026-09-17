@@ -1,6 +1,7 @@
 # CVA6-CHERI design specification
 
 CVA6-CHERI is a dual-issue superscalar in-order 64-bit RISC-V core with support for sufficient ISA extensions as to be "Linux Capable".
+It is based on the [CVA6][cva6-upstream] core maintained by the OpenHW Foundation.
 It is augmented with CHERI "RVY" extensions to enable memory safety and compartmentalisation enforcement as the Mocha enclave processor.
 
 As a RISC-V core, CVA6 itself is designed to comply with the [RISC-V ISA specification][riscv-spec].
@@ -68,6 +69,7 @@ This includes both registers primarily interpreted as addresses, such as (m/s)ep
 The changes to CSRs are mostly found in the [`csr_regfile`][csr-regfile].
 
 [riscv-spec]: https://github.com/riscv/riscv-isa-manual
+[cva6-upstream]: https://github.com/openhwfoundation/cva6
 [cva6-cheri-docs]: hw/vendor/cva6_cheri/docs
 [rvy-spec]: https://github.com/riscv/riscv-cheri
 [rvy-spec-093]: https://github.com/riscv/riscv-cheri/releases/tag/v0.9.3-prerelease
