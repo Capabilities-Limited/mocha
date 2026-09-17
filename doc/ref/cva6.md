@@ -4,7 +4,7 @@ CVA6-CHERI is a dual-issue superscalar in-order 64-bit RISC-V core with support 
 It is augmented with CHERI "RVY" extensions to enable memory safety and compartmentalisation enforcement as the Mocha enclave processor.
 
 As a RISC-V core, CVA6 itself is designed to comply with the [RISC-V ISA specification][riscv-spec].
-Design documents for CVA6's microarchitecture are are present in the [Capabilities Limited fork][cva6-cheri-docs], from which Mocha vendors the IP.
+Design documents for CVA6's microarchitecture are present in the [repo's `docs` subdirectory][cva6-cheri-docs].
 
 The [riscv-cheri specification][rvy-spec] describes the operation of the CHERI instructions.
 The CVA6-CHERI IP vendored into Mocha targets version [0.9.3][rvy-spec-093] of this specification.
@@ -68,7 +68,7 @@ This includes both registers primarily interpreted as addresses, such as (m/s)ep
 The changes to CSRs are mostly found in the [`csr_regfile`][csr-regfile].
 
 [riscv-spec]: https://github.com/riscv/riscv-isa-manual
-[cva6-cheri-docs]: https://github.com/Capabilities-Limited/cheri-cva6/tree/zcheri/docs
+[cva6-cheri-docs]: hw/vendor/cva6_cheri/docs
 [rvy-spec]: https://github.com/riscv/riscv-cheri
 [rvy-spec-093]: https://github.com/riscv/riscv-cheri/releases/tag/v0.9.3-prerelease
 [cva6-cheri-pkg]: hw/vendor/cva6_cheri/core/include/cva6_cheri_pkg.sv
