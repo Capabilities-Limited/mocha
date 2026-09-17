@@ -8,7 +8,7 @@ CVA6-CHERI in Mocha is imported from the [lowRISC CVA6-CHERI repo][lowrisc-cva6-
 
 | Type          | Item                       | Status | Note/Collaterals |
 |---------------|----------------------------|--------|------------------|
-| Documentation | SPEC_COMPLETED             | Done   | The above section gives information on the specification for CVA6-CHERI, including links to the parent RISC-V and RISC-V CHERI (Y) specifications.
+| Documentation | SPEC_COMPLETED             | Done   | [The CVA6-CHERI design spec][cva6-cheri-spec] describes the specification for CVA6-CHERI, including links to the parent RISC-V and RISC-V CHERI (Y) specifications.
 | Documentation | CSR_DEFINED                | Done   | As the CPU itself, CVA6-CHERI does not have a memory mapped interface for CSRs. The CSRs are defined by the RISC-V specifications listed above and accessed internally within the core.
 | RTL           | CLKRST_CONNECTED           | TODO   | This is still in progress. I've checked up to about 3 modules deep: see `clock_audit.txt`. We should discuss whether/how this should be checked in.
 | RTL           | IP_TOP                     | Done   | CVA6-CHERI's top-level `cva6` module is defined in [`cva6.sv`][cva6-top]
@@ -23,3 +23,4 @@ CVA6-CHERI in Mocha is imported from the [lowRISC CVA6-CHERI repo][lowrisc-cva6-
 [cva6-inst-loc]: ../../hw/top_chip/rtl/top_chip_system.sv#L381-L404
 [cva6-top]: ../../hw/vendor/cva6_cheri/src/cva6.sv
 [waivers]: ../../hw/top_chip/lint/top_chip_system.vlt#16
+[cva6-cheri-spec]: ../ref/cva6-cheri.md

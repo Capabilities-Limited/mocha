@@ -103,4 +103,4 @@ Tags should be stored in a separate block of memory from the data, this is to al
 
 The initial value of the SRAM including the tags is undefined at start-up.<!-- hqbiau -->
 
-[cva6-spec]: ./cva6.md
+[cva6-spec]: ./cva6-cheri.md
