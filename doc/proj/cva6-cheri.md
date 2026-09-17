@@ -21,7 +21,7 @@ CVA6-CHERI in Mocha is imported from the [lowRISC CVA6-CHERI repo][lowrisc-cva6-
 [capltd-cva6-cheri]: https://github.com/Capabilities-Limited/cheri-cva6
 [lowrisc-cva6-cheri]: https://github.com/lowRISC/cva6-cheri
 [cva6-inst-loc]: ../../hw/top_chip/rtl/top_chip_system.sv#L381-L404
-[cva6-top]: ../../hw/vendor/cva6_cheri/src/cva6.sv
+[cva6-top]: ../../hw/vendor/cva6_cheri/core/cva6.sv
 [waivers]: ../../hw/top_chip/lint/top_chip_system.vlt#16
 [cva6-cheri-spec]: ../ref/cva6-cheri.md
 [clock-audit]: cva6-cheri-d1-clock-audit.md
