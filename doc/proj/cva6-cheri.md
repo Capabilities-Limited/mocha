@@ -15,7 +15,7 @@ CVA6-CHERI in Mocha is imported from the [lowRISC CVA6-CHERI repo][lowrisc-cva6-
 | RTL           | IP_INSTANTIABLE            | Done   | CVA6-CHERI's top-level module is instantiated in [`top_chip_system.sv`][cva6-inst-loc].
 | RTL           | PHYSICAL_MACROS_DEFINED_80 | TODO   | ...
 | RTL           | FUNC_IMPLEMENTED           | Done   | CVA6-CHERI's mainline functionality is implemented. The baseline processor implements the RISC-V specification, and CHERI features are implemented, including manipulating capabilities, enforcing capability checks, and propagating tags and capability metadata throughout the pipeline. This is demonstrating by booting the pure capability CHERI Linux within Mocha, and pure capability CheriBSD in the `COREV_APU` SoC on FGPA.
-| RTL           | ASSERT_KNOWN_ADDED         | TODO   | ...
+| RTL           | ASSERT_KNOWN_ADDED         | Done   | These are patched into the vendored [`cva6.sv`][cva6-top]
 | Code Quality  | LINT_SETUP                 | Done   | Verilator warning waivers are added to [`top_chip_system.vlt`][waivers].
 
 [capltd-cva6-cheri]: https://github.com/Capabilities-Limited/cheri-cva6
