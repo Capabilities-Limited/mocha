@@ -8,6 +8,7 @@
 
   upstream: {
     url: "https://github.com/Capabilities-Limited/cv-hpdcache.git",
+    // Track CHERI integration updates; pin the imported revision in the lock file.
     rev: "cva6-zcheri-support",
   },
 
