@@ -22,6 +22,7 @@ module dm_csrs #(
 ) (
   input  logic                              clk_i,           // Clock
   input  logic                              rst_ni,          // Asynchronous reset active low
+  input  logic [31:0]                       next_dm_addr_i,  // Static next_dm word address.
   input  logic                              testmode_i,
   input  logic                              dmi_rst_ni,      // sync. DTM reset,
                                                              // active-low
@@ -308,8 +309,8 @@ module dm_csrs #(
         dm::Hartinfo:     resp_queue_inp.data = hartinfo_aligned[selected_hart];
         dm::AbstractCS:   resp_queue_inp.data = abstractcs;
         dm::AbstractAuto: resp_queue_inp.data = abstractauto_q;
-        // command is read-only
-        dm::Command:    resp_queue_inp.data = '0;
+        dm::Command:      resp_queue_inp.data = '0;
+        dm::NextDM:       resp_queue_inp.data = next_dm_addr_i;
         [(dm::ProgBuf0):ProgBufEnd]: begin
           resp_queue_inp.data = progbuf_q[dmi_req_i.addr[$clog2(dm::ProgBufSize)-1:0]];
           if (!cmdbusy_i) begin
@@ -420,6 +421,7 @@ module dm_csrs #(
             end
           end
         end
+        dm::NextDM:; // nextdm is R/O
         dm::AbstractAuto: begin
           // this field can only be written legally when there is no command executing
           if (!cmdbusy_i) begin
@@ -584,24 +586,23 @@ module dm_csrs #(
   logic unused_testmode;
   assign unused_testmode = testmode_i;
 
-  // response FIFO
   prim_fifo_sync #(
-    .Width   ($bits(dmi_resp_o)),
-    .Pass    (1'b0),
-    .Depth   (2)
+    .Width ($bits(dmi_resp_o)),
+    .Pass  (1'b0),
+    .Depth (2)
   ) i_fifo (
-    .clk_i   ( clk_i                ),
-    .rst_ni  ( dmi_rst_ni           ), // reset only when system is re-set
-    .clr_i   ( 1'b0                 ),
-    .wdata_i ( resp_queue_inp       ),
-    .wvalid_i( dmi_req_valid_i      ),
-    .wready_o( dmi_req_ready_o      ),
-    .rdata_o ( dmi_resp_o           ),
-    .rvalid_o( dmi_resp_valid_o     ),
-    .rready_i( dmi_resp_ready_i     ),
-    .full_o  (                      ), // Unused
-    .depth_o (                      ), // Unused
-    .err_o   (                      )  // Unused
+    .clk_i,
+    .rst_ni (dmi_rst_ni),
+    .clr_i  (1'b0),
+    .wdata_i(resp_queue_inp),
+    .wvalid_i(dmi_req_valid_i),
+    .wready_o(dmi_req_ready_o),
+    .rdata_o(dmi_resp_o),
+    .rvalid_o(dmi_resp_valid_o),
+    .rready_i(dmi_resp_ready_i),
+    .full_o (),
+    .depth_o(),
+    .err_o  ()
   );
 
   always_ff @(posedge clk_i or negedge rst_ni) begin : p_regs
